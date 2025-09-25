@@ -844,13 +844,15 @@ function initializeVideoModals() {
   ['videoModal1', 'videoModal2'].forEach(id => {
     const el = document.getElementById(id);
     if (el) {
+      const modalInstance = new bootstrap.Modal(el);  // Inicializamos el modal explícitamente
       el.addEventListener('hidden.bs.modal', () => {
         const iframe = el.querySelector('iframe');
-        if (iframe) iframe.src = iframe.src;
+        if (iframe) iframe.src = iframe.src; // Reinicia el iframe cuando se cierra el modal
       });
     }
   });
 }
+
 
 /**
  * Muestra notificaciones temporales en la esquina superior derecha.
