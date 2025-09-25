@@ -249,15 +249,19 @@ function changeQuantity(productId, change) {
   const item = cart.find((item) => item.id === productId);
   if (!item) return;
 
-  item.quantity += change;
+  setTimeout(() => {
+    item.quantity += change;
 
-  if (item.quantity <= 0) {
-    removeFromCart(productId);
-  } else {
-    updateCartCounter();
-    saveDataToStorage();
-  }
+    if (item.quantity <= 0) {
+      removeFromCart(productId);
+    } else {
+      updateCartCounter();
+      saveDataToStorage();
+      updateCartModal(); // Actualiza la interfaz para que se vea el cambio
+    }
+  }, 300); // Delay de 300ms antes de cambiar la cantidad
 }
+
 
 /**
  * Elimina un producto del carrito.
