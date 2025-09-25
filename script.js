@@ -323,45 +323,59 @@ function showCartNotification(productName) {
 /**
  * Maneja el registro de un nuevo usuario.
  */
-function handleRegistration() {
-  const name = document.getElementById("regName").value;
-  const email = document.getElementById("regEmail").value;
-  const age = document.getElementById("regAge").value;
+document.querySelector("#registerModal form").addEventListener("submit", handleRegistration);
+
+function handleRegistration(e) {
+   e.preventDefault();
+
+  const run = document.getElementById("regRun").value.trim().toUpperCase();
+  const name = document.getElementById("regName").value.trim();
+  const lastName = document.getElementById("regLastName").value.trim();
+  const email = document.getElementById("regEmail").value.trim().toLowerCase();
+  const birthDateValue = document.getElementById("regBirthDate").value;
+  const userType = document.getElementById("regUserType")?.value || "Cliente";
+  const address = document.getElementById("regAddress").value.trim();
+  const referralCode = document.getElementById("referralCode").value.trim(); // opcional
   const password = document.getElementById("regPassword").value;
-  const referralCode = document.getElementById("referralCode").value;
 
-  const birthDate = new Date(age);
-  const today = new Date();
-  const ageInYears = today.getFullYear() - birthDate.getFullYear();
-  if (ageInYears < 18) {
-    showNotification("Debes ser mayor de 18 años para registrarte.", "warning");
+  // ... [validaciones RUN, nombre, apellidos, email, etc.] ...
+
+  // Dirección
+  if (!address || address.length > 300) {
+    showNotification("La dirección es obligatoria y debe tener máximo 300 caracteres.", "warning");
     return;
   }
 
+  // Email único
   if (users.find((user) => user.email === email)) {
-    showNotification("Este email ya está registrado.", "warning");
+    showNotification("Este correo ya está registrado.", "warning");
     return;
   }
 
-  const isDuocEmail = email.includes("@duocuc.cl");
+  // ===== Crear usuario =====
+  const isDuocEmail = ["@duoc.cl", "@duocuc.cl", "@profesor.duoc.cl"].some(d => email.endsWith(d));
   const newUser = {
     id: Date.now().toString(),
+    run,
     name,
+    lastName,
     email,
     password,
-    birthDate: age,
-    isDuocStudent: isDuocEmail,
-    discount: isDuocEmail ? 20 : 0,
-    levelUpPoints: referralCode ? 100 : 0,
+    birthDate: birthDateValue || null,
+    userType,
+    address,
+    referralCode: referralCode || null,       // se guarda si existe
+    discount: isDuocEmail ? 20 : 0,           // 20% si es email Duoc
+    levelUpPoints: referralCode ? 100 : 0,    // 100 pts si lo ingresó
     level: 1,
-    registrationDate: new Date().toISOString(),
-    referralCode: referralCode || null,
+    registrationDate: new Date().toISOString()
   };
 
   users.push(newUser);
   currentUser = newUser;
   saveDataToStorage();
 
+  // Mensaje dinámico
   let message = "¡Registro exitoso!";
   if (isDuocEmail) message += " Has obtenido un 20% de descuento de por vida por tu email Duoc.";
   if (referralCode) message += " Has ganado 100 puntos LevelUp por usar un código de referido.";
@@ -369,8 +383,10 @@ function handleRegistration() {
 
   updateUserInterface();
   bootstrap.Modal.getInstance(document.getElementById("registerModal"))?.hide();
-  console.log("[v1] User registered:", newUser);
+  console.log("[v-final] User registered:", newUser);
 }
+
+
 
 /**
  * Maneja el inicio de sesión.

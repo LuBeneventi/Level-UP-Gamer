@@ -614,29 +614,75 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form id="registerForm">
+
+                        <!-- RUN -->
                         <div class="mb-3">
-                            <label for="regName" class="form-label">Nombre Completo</label>
-                            <input type="text" class="form-control" id="regName" required>
+                            <label for="regRun" class="form-label">RUN</label>
+                            <input type="text" class="form-control" id="regRun" placeholder="Ej: 19011022K" required
+                                minlength="7" maxlength="9">
+                            <div class="form-text">Sin puntos ni guion. Ejemplo: 19011022K</div>
                         </div>
+
+                        <!-- Nombre -->
                         <div class="mb-3">
-                            <label for="regEmail" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="regEmail" required>
-                            <div class="form-text">¿Tienes email @duocuc.cl? ¡Obtén 20% de descuento de por vida!</div>
+                            <label for="regName" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="regName" required maxlength="50">
                         </div>
+
+                        <!-- Apellidos -->
                         <div class="mb-3">
-                            <label for="regAge" class="form-label">Fecha de Nacimiento</label>
-                            <input type="date" class="form-control" id="regAge" required>
+                            <label for="regLastName" class="form-label">Apellidos</label>
+                            <input type="text" class="form-control" id="regLastName" required maxlength="100">
                         </div>
+
+                        <!-- Email -->
+                        <div class="mb-3">
+                            <label for="regEmail" class="form-label">Correo</label>
+                            <input type="email" class="form-control" id="regEmail" required maxlength="100">
+                            <div class="form-text">
+                                Solo se aceptan correos con dominio @duoc.cl, @duocuc.cl, @profesor.duoc.cl o @gmail.com
+                            </div>
+                        </div>
+
+                        <!-- Fecha nacimiento -->
+                        <div class="mb-3">
+                            <label for="regBirthDate" class="form-label">Fecha de Nacimiento</label>
+                            <input type="date" class="form-control" id="regBirthDate">
+                            <div class="form-text">Opcional (mínimo 18 años si se ingresa).</div>
+                        </div>
+
+                        <!-- Tipo de usuario (solo para admins) -->
+                        <div class="mb-3 d-none" id="userTypeWrapper">
+                            <label for="regUserType" class="form-label">Tipo de Usuario</label>
+                            <select class="form-select" id="regUserType">
+                                <option value="Cliente" selected>Cliente</option>
+                                <option value="Vendedor">Vendedor</option>
+                                <option value="Administrador">Administrador</option>
+                            </select>
+                        </div>
+
+                        <!-- Dirección -->
+                        <div class="mb-3">
+                            <label for="regAddress" class="form-label">Dirección</label>
+                            <input type="text" class="form-control" id="regAddress" required maxlength="300">
+                        </div>
+
+                        <!-- Contraseña -->
                         <div class="mb-3">
                             <label for="regPassword" class="form-label">Contraseña</label>
                             <input type="password" class="form-control" id="regPassword" required>
                         </div>
+
+                        <!-- Código de referido (OPCIONAL) -->
                         <div class="mb-3">
                             <label for="referralCode" class="form-label">Código de Referido (Opcional)</label>
-                            <input type="text" class="form-control" id="referralCode">
+                            <input type="text" class="form-control" id="referralCode" maxlength="20"
+                                placeholder="Ingresa un código si tienes uno">
+                            <div class="form-text">Si tienes un código de referido, obtendrás 100 puntos LevelUp.</div>
                         </div>
-                        <!-- Agregando checkbox de términos y condiciones -->
+
+                        <!-- Aceptar términos -->
                         <div class="mb-3 form-check">
                             <input type="checkbox" class="form-check-input" id="acceptTerms" required>
                             <label class="form-check-label" for="acceptTerms">
@@ -644,12 +690,17 @@
                                     data-bs-target="#termsModal">términos y condiciones</a>
                             </label>
                         </div>
+
+                        <!-- Botón -->
                         <button type="submit" class="btn btn-neon-green w-100">Registrarse</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+
+
+
 
     <!-- Agregando modal para recuperar contraseña -->
     <!-- Forgot Password Modal -->

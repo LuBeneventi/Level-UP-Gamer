@@ -235,17 +235,17 @@ function cargarPedidos(orderDirection = "desc", searchQuery = "") {
 
   // Ordenar por fecha
   orders.sort((a, b) => {
-    return orderDirection === "asc" 
-      ? new Date(a.date) - new Date(b.date) 
+    return orderDirection === "asc"
+      ? new Date(a.date) - new Date(b.date)
       : new Date(b.date) - new Date(a.date);
   });
 
-  // Filtrar por cliente
+  // Filtrar por cliente (usando RUT en lugar de nombre)
   if (searchQuery) {
     orders = orders.filter(order => {
       let user = users.find(u => u.id === order.userId);
-      let userName = user ? user.name.toLowerCase() : "desconocido";
-      return userName.includes(searchQuery.toLowerCase());
+      let userRun = user ? String(user.run).toLowerCase() : "desconocido"; // 👈 aseguramos string
+      return userRun.includes(searchQuery.toLowerCase());
     });
   }
 
@@ -255,21 +255,20 @@ function cargarPedidos(orderDirection = "desc", searchQuery = "") {
   tbody.innerHTML = "";
   orders.forEach(order => {
     let user = users.find(u => u.id === order.userId);
-    let userName = user ? user.name : "Desconocido";
+    let userRun = user ? user.run : "Desconocido";
     let fecha = new Date(order.date).toLocaleDateString();
 
     tbody.innerHTML += `
       <tr>
         <td>#${order.id}</td>
-        <td>${userName}</td>
+        <td>${userRun}</td>
         <td>${fecha}</td>
         <td>$${order.total.toLocaleString()} CLP</td>
         <td>
-          <span class="badge ${
-            order.status === "pendiente" ? "bg-warning" :
-            order.status === "completado" ? "bg-success" :
-            order.status === "cancelado" ? "bg-danger" : "bg-secondary"
-          }">${order.status}</span>
+          <span class="badge ${order.status === "pendiente" ? "bg-warning" :
+        order.status === "completado" ? "bg-success" :
+          order.status === "cancelado" ? "bg-danger" : "bg-secondary"
+      }">${order.status}</span>
         </td>
         <td>
           <button class="btn btn-sm btn-outline-info me-1" onclick="verPedido('${order.id}')">
@@ -292,6 +291,7 @@ function cargarPedidos(orderDirection = "desc", searchQuery = "") {
     `;
   });
 }
+
 
 // ====== EVENTOS ======
 const filter = document.getElementById("orderDateFilter");
@@ -338,12 +338,12 @@ function verPedido(id) {
   if (!order) return;
 
   let user = users.find(u => u.id === order.userId);
-  let userName = user ? user.name : "Desconocido";
+  let userRun = user ? user.run : "Desconocido"; // 👈 acá definimos el RUN
   let fecha = new Date(order.date).toLocaleString();
 
   const detallesHTML = `
     <p><strong>Pedido #${order.id}</strong></p>
-    <p><strong>Cliente:</strong> ${userName}</p>
+    <p><strong>Cliente (RUN):</strong> ${userRun}</p>
     <p><strong>Fecha:</strong> ${fecha}</p>
     <p><strong>Total:</strong> $${order.total.toLocaleString()} CLP</p>
     <p><strong>Estado:</strong> ${order.status}</p>

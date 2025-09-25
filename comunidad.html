@@ -58,7 +58,7 @@
                     <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#registerModal">
                         <i class="fas fa-user-plus me-1"></i>Registrarse
                     </a>
-                     <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#cartModal">
+                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#cartModal">
                         <i class="fas fa-shopping-cart me-1"></i>
                         Carrito <span id="cart-counter" class="badge bg-neon-green">0</span>
                     </a>
@@ -102,6 +102,32 @@
                         <button id="shareBtn" class="share-btn">
                             <i class="fas fa-share-alt"></i>
                         </button>
+                        <!-- Modal: Compartir (GLOBAL - se puede usar en toda la página) -->
+                        <div id="shareModal" class="share-modal">
+                            <div class="share-content">
+                                <span class="close-btn" id="closeShareModal">&times;</span>
+                                <h3>¡Comparte tu código de referido!</h3>
+                                <p>Invita a tus amigos y gana puntos LevelUp.</p>
+
+                                <div class="share-options">
+                                    <a id="whatsappShare"
+                                        href="https://api.whatsapp.com/send?text=Únete a LevelUp con mi código LEVELUPGAMER25 https://tusitio.com/registro?ref=LEVELUPGAMER25"
+                                        target="_blank" class="share-option whatsapp">
+                                        📱 WhatsApp
+                                    </a>
+                                    <a id="facebookShare"
+                                        href="https://www.facebook.com/sharer/sharer.php?u=https://tusitio.com/registro?ref=LEVELUPGAMER25"
+                                        target="_blank" class="share-option facebook">
+                                        📘 Facebook
+                                    </a>
+                                    <a id="twitterShare"
+                                        href="https://twitter.com/intent/tweet?text=Únete a LevelUp con mi código LEVELUPGAMER25&url=https://tusitio.com/registro?ref=LEVELUPGAMER25"
+                                        target="_blank" class="share-option twitter">
+                                        🐦 Twitter
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -112,7 +138,8 @@
                             <i class="fas fa-trophy fa-3x"></i>
                         </div>
                         <h4>Sistema de Niveles</h4>
-                        <p>Sube de nivel con tus puntos LevelUp y desbloquea descuentos exclusivos con los que podrás acceder a productos y promociones especiales.</p>
+                        <p>Sube de nivel con tus puntos LevelUp y desbloquea descuentos exclusivos con los que podrás
+                            acceder a productos y promociones especiales.</p>
                         <div class="image-placeholder small">
                             <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal">
                                 <img src="public/rank.png" alt="Sistema de Niveles" class="img-fluid">
@@ -131,7 +158,8 @@
                             <i class="fas fa-map-marker-alt fa-3x"></i>
                         </div>
                         <h4>Eventos Gamers</h4>
-                        <p>Participa en eventos gaming a nivel nacional y gana puntos LevelUp adicionales, los que podrás cambiar por recompensas exclusivas.</p>
+                        <p>Participa en eventos gaming a nivel nacional y gana puntos LevelUp adicionales, los que
+                            podrás cambiar por recompensas exclusivas.</p>
                         <div class="image-placeholder small">
                             <img src="public/fifa.png" alt="Eventos Gamers" class="img-fluid">
                         </div>
@@ -453,44 +481,18 @@
     </footer>
 
     <!-- ====== MODALES GLOBALES ====== -->
-    
+
     <!-- Modal: Imagen Ampliada -->
     <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl modal-dialog-centered">
             <div class="modal-content bg-transparent border-0">
                 <div class="modal-header border-0 pb-0">
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
                 </div>
                 <div class="modal-body text-center">
                     <img src="public/rank.png" class="img-fluid" alt="Sistema de Niveles">
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal: Compartir (GLOBAL - se puede usar en toda la página) -->
-    <div id="shareModal" class="share-modal">
-        <div class="share-content">
-            <span class="close-btn" id="closeShareModal">&times;</span>
-            <h3>¡Comparte tu código de referido!</h3>
-            <p>Invita a tus amigos y gana puntos LevelUp.</p>
-
-            <div class="share-options">
-                <a id="whatsappShare"
-                    href="https://api.whatsapp.com/send?text=Únete a LevelUp con mi código LEVELUPGAMER25 https://tusitio.com/registro?ref=LEVELUPGAMER25"
-                    target="_blank" class="share-option whatsapp">
-                    📱 WhatsApp
-                </a>
-                <a id="facebookShare"
-                    href="https://www.facebook.com/sharer/sharer.php?u=https://tusitio.com/registro?ref=LEVELUPGAMER25"
-                    target="_blank" class="share-option facebook">
-                    📘 Facebook
-                </a>
-                <a id="twitterShare"
-                    href="https://twitter.com/intent/tweet?text=Únete a LevelUp con mi código LEVELUPGAMER25&url=https://tusitio.com/registro?ref=LEVELUPGAMER25"
-                    target="_blank" class="share-option twitter">
-                    🐦 Twitter
-                </a>
             </div>
         </div>
     </div>
