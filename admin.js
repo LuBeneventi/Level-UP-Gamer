@@ -665,29 +665,39 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Configurar formulario de eventos
-  const addEventForm = document.getElementById('addEventForm');
-  if (addEventForm) {
-    addEventForm.addEventListener('submit', function (event) {
-      event.preventDefault();
-
-      const newEvent = {
-        nombre: document.getElementById('eventName').value,
-        descripcion: document.getElementById('eventDescription').value,
-        fecha: document.getElementById('eventDate').value,
-        lugar: document.getElementById('eventLocation').value,
-        puntos: document.getElementById('eventPoints').value
-      };
-
-      let events = JSON.parse(localStorage.getItem('events')) || [];
-      events.push(newEvent);
-      localStorage.setItem('events', JSON.stringify(events));
-
-      showNotification('Evento guardado exitosamente!', 'success');
-      addEventForm.reset();
-      loadEvents();
-    });
-  }
+  addEventForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+  
+    const eventDateValue = document.getElementById('eventDate').value;
+    const eventDate = new Date(eventDateValue);
+    const today = new Date();
+  
+    // Calcular la fecha límite (una semana antes de hoy)
+    const oneWeekBefore = new Date(today);
+    oneWeekBefore.setDate(today.getDate() - 7);
+  
+    if (eventDate < oneWeekBefore) {
+      showNotification('No se pueden registrar eventos con fecha anterior a una semana desde hoy.', 'error');
+      return; // salir para no guardar el evento
+    }
+  
+    const newEvent = {
+      nombre: document.getElementById('eventName').value,
+      descripcion: document.getElementById('eventDescription').value,
+      fecha: eventDateValue,
+      lugar: document.getElementById('eventLocation').value,
+      puntos: document.getElementById('eventPoints').value
+    };
+  
+    let events = JSON.parse(localStorage.getItem('events')) || [];
+    events.push(newEvent);
+    localStorage.setItem('events', JSON.stringify(events));
+  
+    showNotification('Evento guardado exitosamente!', 'success');
+    addEventForm.reset();
+    loadEvents();
+  });
+  
 
   // Inicializar usuarios si no existen
   if (!localStorage.getItem('users')) {

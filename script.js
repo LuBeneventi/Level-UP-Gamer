@@ -390,9 +390,17 @@ if (birthDateValue) {
   // Comparar solo fechas (sin tiempo)
   birthDate.setHours(0,0,0,0);
   today.setHours(0,0,0,0);
+  
+  const minDate = new Date('1960-01-01');
+  minDate.setHours(0,0,0,0);
 
   if (birthDate > today) {
     showNotification("La fecha de nacimiento no puede ser mayor a la fecha actual.", "warning");
+    return;
+  }
+
+  if (birthDate < minDate) {
+    showNotification("La fecha de nacimiento no puede ser anterior al año 1960.", "warning");
     return;
   }
 }
