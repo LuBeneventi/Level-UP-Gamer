@@ -504,98 +504,99 @@
         </div>
     </div>
 
-     <!-- Register Modal -->
-     <div class="modal fade" id="registerModal" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Registrarse</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="registerForm">
+ <!-- Register Modal -->
+ <div class="modal fade" id="registerModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Registrarse</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="registerForm">
 
-                        <!-- RUN -->
-                        <div class="mb-3">
-                            <label for="regRun" class="form-label">RUN</label>
-                            <input type="text" class="form-control" id="regRun" placeholder="Ej: 19011022K" required
-                                minlength="7" maxlength="9">
-                            <div class="form-text">Sin puntos ni guion. Ejemplo: 19011022K</div>
+                    <!-- RUN -->
+                    <div class="mb-3">
+                        <label for="regRun" class="form-label">RUN</label>
+                        <input type="text" class="form-control" id="regRun" placeholder="Ej: 19011022K" required
+                            minlength="7" maxlength="9">
+                        <div class="form-text">Sin puntos ni guion. Ejemplo: 19011022K</div>
+                    </div>
+
+                    <!-- Nombre -->
+                    <div class="mb-3">
+                        <label for="regName" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="regName" required maxlength="50">
+                    </div>
+
+                    <!-- Apellidos -->
+                    <div class="mb-3">
+                        <label for="regLastName" class="form-label">Apellidos</label>
+                        <input type="text" class="form-control" id="regLastName" required maxlength="100">
+                    </div>
+
+                    <!-- Email -->
+                    <div class="mb-3">
+                        <label for="regEmail" class="form-label">Correo</label>
+                        <input type="email" class="form-control" id="regEmail" required maxlength="100">
+                        <div class="form-text">
+                            Solo se aceptan correos con dominio @duoc.cl, @duocuc.cl, @profesor.duoc.cl o @gmail.com
                         </div>
+                    </div>
 
-                        <!-- Nombre -->
-                        <div class="mb-3">
-                            <label for="regName" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="regName" required maxlength="50">
-                        </div>
+                    <!-- Fecha nacimiento -->
+                    <div class="mb-3">
+                        <label for="regBirthDate" class="form-label">Fecha de Nacimiento</label>
+                        <input type="date" class="form-control" id="regBirthDate">
+                        <div class="form-text">Opcional (mínimo 18 años si se ingresa).</div>
+                    </div>
 
-                        <!-- Apellidos -->
-                        <div class="mb-3">
-                            <label for="regLastName" class="form-label">Apellidos</label>
-                            <input type="text" class="form-control" id="regLastName" required maxlength="100">
-                        </div>
+                    <!-- Tipo de usuario (solo para admins) -->
+                    <div class="mb-3 d-none" id="userTypeWrapper">
+                        <label for="regUserType" class="form-label">Tipo de Usuario</label>
+                        <select class="form-select" id="regUserType">
+                            <option value="Cliente" selected>Cliente</option>
+                            <option value="Vendedor">Vendedor</option>
+                            <option value="Administrador">Administrador</option>
+                        </select>
+                    </div>
 
-                        <!-- Email -->
-                        <div class="mb-3">
-                            <label for="regEmail" class="form-label">Correo</label>
-                            <input type="email" class="form-control" id="regEmail" required maxlength="100">
-                            <div class="form-text">
-                                Solo se aceptan correos con dominio @duoc.cl, @duocuc.cl, @profesor.duoc.cl o @gmail.com
-                            </div>
-                        </div>
+                    <!-- Dirección -->
+                    <div class="mb-3">
+                        <label for="regAddress" class="form-label">Dirección</label>
+                        <input type="text" class="form-control" id="regAddress" required maxlength="300">
+                    </div>
 
-                        <!-- Fecha nacimiento -->
-                        <div class="mb-3">
-                            <label for="regBirthDate" class="form-label">Fecha de Nacimiento</label>
-                            <input type="date" class="form-control" id="regBirthDate">
-                            <div class="form-text">Opcional (mínimo 18 años si se ingresa).</div>
-                        </div>
+                    <!-- Contraseña -->
+                    <div class="mb-3">
+                        <label for="regPassword" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="regPassword" required>
+                    </div>
 
-                        <!-- Tipo de usuario (solo para admins) -->
-                        <div class="mb-3 d-none" id="userTypeWrapper">
-                            <label for="regUserType" class="form-label">Tipo de Usuario</label>
-                            <select class="form-select" id="regUserType">
-                                <option value="Cliente" selected>Cliente</option>
-                                <option value="Vendedor">Vendedor</option>
-                                <option value="Administrador">Administrador</option>
-                            </select>
-                        </div>
+                    <!-- Código de referido (OPCIONAL) -->
+                    <div class="mb-3">
+                        <label for="referralCode" class="form-label">Código de Referido (Opcional)</label>
+                        <input type="text" class="form-control" id="referralCode" maxlength="20"
+                            placeholder="Ingresa un código si tienes uno">
+                        <div class="form-text">Si tienes un código de referido, obtendrás 100 puntos LevelUp.</div>
+                    </div>
 
-                        <!-- Dirección -->
-                        <div class="mb-3">
-                            <label for="regAddress" class="form-label">Dirección</label>
-                            <input type="text" class="form-control" id="regAddress" required maxlength="300">
-                        </div>
+                    <!-- Aceptar términos -->
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="acceptTerms" required>
+                        <label class="form-check-label" for="acceptTerms">
+                            Acepto los <a href="#" class="text-electric-blue" data-bs-toggle="modal"
+                                data-bs-target="#termsModal">términos y condiciones</a>
+                        </label>
+                    </div>
 
-                        <!-- Contraseña -->
-                        <div class="mb-3">
-                            <label for="regPassword" class="form-label">Contraseña</label>
-                            <input type="password" class="form-control" id="regPassword" required>
-                        </div>
-
-                        <!-- Código de referido (OPCIONAL) -->
-                        <div class="mb-3">
-                            <label for="referralCode" class="form-label">Código de Referido (Opcional)</label>
-                            <input type="text" class="form-control" id="referralCode" maxlength="20"
-                                placeholder="Ingresa un código si tienes uno">
-                            <div class="form-text">Si tienes un código de referido, obtendrás 100 puntos LevelUp.</div>
-                        </div>
-
-                        <!-- Aceptar términos -->
-                        <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="acceptTerms" required>
-                            <label class="form-check-label" for="acceptTerms">
-                                Acepto los <a href="#" class="text-electric-blue" data-bs-toggle="modal"
-                                    data-bs-target="#termsModal">términos y condiciones</a>
-                            </label>
-                        </div>
-
-                        <!-- Botón -->
-                        <button type="submit" class="btn btn-neon-green w-100">Registrarse</button>
-                    </form>
-                </div>
+                    <!-- Botón -->
+                    <button type="submit" class="btn btn-neon-green w-100">Registrarse</button>
+                </form>
             </div>
         </div>
+    </div>
+</div>
 
     <!-- Agregando modal para recuperar contraseña -->
     <!-- Forgot Password Modal -->
@@ -615,6 +616,31 @@
                         </div>
                         <button type="submit" class="btn btn-electric-blue w-100">Enviar Nueva Contraseña</button>
                     </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <!-- Agregando modal de perfil de usuario -->
+    <!-- Profile Modal -->
+    <div class="modal fade" id="profileModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Mi Perfil</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="profileContent">
+                        <!-- Contenido del perfil se carga dinámicamente -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-electric-blue" onclick="openEditProfile()">Editar
+                        Perfil</button>
+                    <button type="button" class="btn btn-neon-green" onclick="openChangePassword()">Cambiar
+                        Contraseña</button>
                 </div>
             </div>
         </div>
@@ -640,36 +666,6 @@
                         Perfil</button>
                     <button type="button" class="btn btn-neon-green" onclick="openChangePassword()">Cambiar
                         Contraseña</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Agregando modal para editar perfil -->
-    <!-- Edit Profile Modal -->
-    <div class="modal fade" id="editProfileModal" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Editar Perfil</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="editProfileForm">
-                        <div class="mb-3">
-                            <label for="editName" class="form-label">Nombre Completo</label>
-                            <input type="text" class="form-control" id="editName" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="editEmail" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="editEmail" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="editBirthDate" class="form-label">Fecha de Nacimiento</label>
-                            <input type="date" class="form-control" id="editBirthDate" required>
-                        </div>
-                        <button type="submit" class="btn btn-electric-blue w-100">Guardar Cambios</button>
-                    </form>
                 </div>
             </div>
         </div>

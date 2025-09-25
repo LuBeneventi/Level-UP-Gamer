@@ -744,6 +744,7 @@
                 </div>
             </div>
         </div>
+    </div>
 
     <!-- Agregando modal para recuperar contraseña -->
     <!-- Forgot Password Modal -->
@@ -793,36 +794,30 @@
         </div>
     </div>
 
-    <!-- Agregando modal para editar perfil -->
-    <!-- Edit Profile Modal -->
-    <div class="modal fade" id="editProfileModal" tabindex="-1">
-        <div class="modal-dialog">
+    <!-- Agregando modal de perfil de usuario -->
+    <!-- Profile Modal -->
+    <div class="modal fade" id="profileModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Editar Perfil</h5>
+                    <h5 class="modal-title">Mi Perfil</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="editProfileForm">
-                        <div class="mb-3">
-                            <label for="editName" class="form-label">Nombre Completo</label>
-                            <input type="text" class="form-control" id="editName" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="editEmail" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="editEmail" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="editBirthDate" class="form-label">Fecha de Nacimiento</label>
-                            <input type="date" class="form-control" id="editBirthDate" required>
-                        </div>
-                        <button type="submit" class="btn btn-electric-blue w-100">Guardar Cambios</button>
-                    </form>
+                    <div id="profileContent">
+                        <!-- Contenido del perfil se carga dinámicamente -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-electric-blue" onclick="openEditProfile()">Editar
+                        Perfil</button>
+                    <button type="button" class="btn btn-neon-green" onclick="openChangePassword()">Cambiar
+                        Contraseña</button>
                 </div>
             </div>
         </div>
     </div>
-
     <!-- Agregando modal para cambiar contraseña -->
     <!-- Change Password Modal -->
     <div class="modal fade" id="changePasswordModal" tabindex="-1">

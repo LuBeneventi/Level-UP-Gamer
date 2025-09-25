@@ -337,8 +337,20 @@ function handleRegistration(e) {
   const address = document.getElementById("regAddress").value.trim();
   const referralCode = document.getElementById("referralCode").value.trim(); // opcional
   const password = document.getElementById("regPassword").value;
+  
 
   // ... [validaciones RUN, nombre, apellidos, email, etc.] ...
+// Validar que nombre tenga al menos 2 letras
+if (name.length < 2) {
+  showNotification("El nombre debe tener al menos 2 letras.", "warning");
+  return;
+}
+
+// Validar que apellido tenga al menos 2 letras
+if (lastName.length < 2) {
+  showNotification("El apellido debe tener al menos 2 letras.", "warning");
+  return;
+}
 
   // Dirección
   if (!address || address.length > 300) {
@@ -351,6 +363,20 @@ function handleRegistration(e) {
     showNotification("Este correo ya está registrado.", "warning");
     return;
   }
+// Validar que la fecha de nacimiento no sea futura
+if (birthDateValue) {
+  const birthDate = new Date(birthDateValue);
+  const today = new Date();
+
+  // Comparar solo fechas (sin tiempo)
+  birthDate.setHours(0,0,0,0);
+  today.setHours(0,0,0,0);
+
+  if (birthDate > today) {
+    showNotification("La fecha de nacimiento no puede ser mayor a la fecha actual.", "warning");
+    return;
+  }
+}
 
   // ===== Crear usuario =====
   const isDuocEmail = ["@duoc.cl", "@duocuc.cl", "@profesor.duoc.cl"].some(d => email.endsWith(d));
