@@ -1,0 +1,194 @@
+    <!-- Featured Products Section -->
+    <section id="productos" class="products-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title">Explora Nuestros Productos</h2>
+                    <p class="section-subtitle">Encuentra todo lo que necesitas para tu experiencia gamer</p>
+                    <link rel="stylesheet" href="styles.css">
+                </div>
+            </div>
+            
+            <!-- Filtros -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="filter-buttons text-center">
+                        <button class="btn btn-outline-electric-blue active me-2 mb-2" data-filter="all">Todos</button>
+                        <button class="btn btn-outline-electric-blue me-2 mb-2" data-filter="juegos-mesa">Juegos de Mesa</button>
+                        <button class="btn btn-outline-electric-blue me-2 mb-2" data-filter="accesorios">Accesorios</button>
+                        <button class="btn btn-outline-electric-blue me-2 mb-2" data-filter="consolas">Consolas</button>
+                        <button class="btn btn-outline-electric-blue me-2 mb-2" data-filter="computadores">Computadores</button>
+                        <button class="btn btn-outline-electric-blue me-2 mb-2" data-filter="sillas">Sillas Gamers</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Products Grid -->
+            <div class="row" id="products-grid">
+                <!-- Juegos de Mesa -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="juegos-mesa">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="public/juego-catan.png" alt="Catan" class="product-img">
+                            <div class="product-badge">JM001</div>
+                        </div>
+                        <div class="product-info">
+                            <h5 class="product-title">Catan</h5>
+                            <p class="product-description">Un clásico juego de estrategia donde los jugadores compiten por colonizar y expandirse en la isla de Catan.</p>
+                            <div class="product-price">$29.990 CLP</div>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(4.8)</span>
+                            </div>
+                            <button class="btn btn-neon-green w-100 add-to-cart" data-product="JM001">
+                                <i class="fas fa-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="juegos-mesa">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="public/juego-carcassonne.png" alt="Carcassonne" class="product-img">
+                            <div class="product-badge">JM002</div>
+                        </div>
+                        <div class="product-info">
+                            <h5 class="product-title">Carcassonne</h5>
+                            <p class="product-description">Un juego de colocación de fichas donde los jugadores construyen el paisaje alrededor de la fortaleza medieval.</p>
+                            <div class="product-price">$24.990 CLP</div>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>(4.5)</span>
+                            </div>
+                            <button class="btn btn-neon-green w-100 add-to-cart" data-product="JM002">
+                                <i class="fas fa-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Accesorios -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="accesorios">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="public/controlador-xbox.png" alt="Controlador Xbox" class="product-img">
+                            <div class="product-badge">AC001</div>
+                        </div>
+                        <div class="product-info">
+                            <h5 class="product-title">Controlador Inalámbrico Xbox Series X</h5>
+                            <p class="product-description">Ofrece una experiencia de juego cómoda con botones mapeables y una respuesta táctil mejorada.</p>
+                            <div class="product-price">$59.990 CLP</div>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(4.9)</span>
+                            </div>
+                            <button class="btn btn-neon-green w-100 add-to-cart" data-product="AC001">
+                                <i class="fas fa-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="accesorios">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="public/auriculares-hyperx.png" alt="Auriculares HyperX" class="product-img">
+                            <div class="product-badge">AC002</div>
+                        </div>
+                        <div class="product-info">
+                            <h5 class="product-title">Auriculares Gamer HyperX Cloud II</h5>
+                            <p class="product-description">Proporcionan un sonido envolvente de calidad con un micrófono desmontable y almohadillas de espuma.</p>
+                            <div class="product-price">$79.990 CLP</div>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(4.7)</span>
+                            </div>
+                            <button class="btn btn-neon-green w-100 add-to-cart" data-product="AC002">
+                                <i class="fas fa-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Consolas -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="consolas">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="public/playstation-5-console.png" alt="PlayStation 5" class="product-img">
+                            <div class="product-badge">CO001</div>
+                            <div class="product-hot">¡HOT!</div>
+                        </div>
+                        <div class="product-info">
+                            <h5 class="product-title">PlayStation 5</h5>
+                            <p class="product-description">La consola de última generación de Sony, que ofrece gráficos impresionantes y tiempos de carga ultrarrápidos.</p>
+                            <div class="product-price">$549.990 CLP</div>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(4.9)</span>
+                            </div>
+                            <button class="btn btn-neon-green w-100 add-to-cart" data-product="CO001">
+                                <i class="fas fa-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Computadores -->
+                <div class="col-lg-4 col-md-6 mb-4 product-item" data-category="computadores">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="public/pc-gamer-asus.png" alt="PC ASUS ROG" class="product-img">
+                            <div class="product-badge">CG001</div>
+                            <div class="product-hot">¡PREMIUM!</div>
+                        </div>
+                        <div class="product-info">
+                            <h5 class="product-title">PC Gamer ASUS ROG Strix</h5>
+                            <p class="product-description">Un potente equipo diseñado para los gamers más exigentes, equipado con los últimos componentes.</p>
+                            <div class="product-price">$1.299.990 CLP</div>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(5.0)</span>
+                            </div>
+                            <button class="btn btn-neon-green w-100 add-to-cart" data-product="CG001">
+                                <i class="fas fa-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-12 text-center">
+                    <a href="productos.html" class="btn btn-electric-blue btn-lg">
+                        <i class="fas fa-eye me-2"></i>Ver Todos los Productos
+                    </a>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </section>

@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level-Up Gamer - Tu Tienda Gamer Online</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Orbitron:wght@400;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <!-- Updated navbar brand to use the provided logo -->
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="Level-Up Gamer" height="40" class="me-2">
+                <span class="brand-text">Level-Up Gamer</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Updated navigation links to point to separate pages -->
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="productos.html">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="comunidad.html">Comunidad</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="puntos.html">Puntos</a>
+                    </li>
+                </ul>
+
+                <div class="navbar-nav">
+                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        <i class="fas fa-user me-1"></i>Iniciar Sesión
+                    </a>
+
+                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#registerModal">
+                        <i class="fas fa-user-plus me-1"></i>Registrarse
+                    </a>
+                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#cartModal">
+                        <i class="fas fa-shopping-cart me-1"></i>
+                        Carrito <span id="cart-counter" class="badge bg-neon-green">0</span>
+                    </a>
+                </div>
+
+                <!-- <div class="nav-item dropdown" id="user-dropdown" style="display: none;">
+                    <a class="nav-link dropdown-toggle text-neon-green" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <i class="fas fa-user me-1"></i>
+                        <span id="user-name">Usuario</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                        <li><a class="dropdown-item" href="#" onclick="showUserProfile()"><i
+                                    class="fas fa-user me-2"></i>Mi Perfil</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="openEditProfile()"><i
+                                    class="fas fa-edit me-2"></i>Editar Perfil</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="openChangePassword()"><i
+                                    class="fas fa-key me-2"></i>Cambiar Contraseña</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#" onclick="logout()"><i
+                                    class="fas fa-sign-out-alt me-2"></i>Cerrar Sesión</a></li>
+                    </ul>
+                </div>-->
+
+
+
+            </div>
+        </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" style="padding-top: 120px;">
+        <div class="container">
+            <div class="row min-vh-100 justify-content-center align-items-center text-center">
+                <div class="col-lg-8">
+                    <h1 class="hero-title mb-4">
+                        ¡Desafía tus límites con <span class="text-electric-blue">Level-Up Gamer</span>!
+                    </h1>
+                    <p class="hero-subtitle mb-5">
+                        Conviértete en el héroe de tu propia historia y únete a nuestra comunidad de jugadores.
+                        ¡Explora, juega y gana con nosotros!
+                    </p>
+                    <img src="images/logo.png" alt="Level-Up Gamer" class="mb-4 img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recommendations Section -->
+    <section class="recommendations-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title">Recomendaciones</h2>
+                    <p class="section-subtitle">Los productos más populares seleccionados para ti</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Recommended Product 1 -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="product-card recommended">
+                        <div class="product-image">
+                            <img src="public/playstation-5-console.png" alt="PlayStation 5" class="product-img">
+                            <div class="product-badge">RECOMENDADO</div>
+                            <div class="product-hot">¡HOT!</div>
+                        </div>
+                        <div class="product-info">
+                            <h5 class="product-title">PlayStation 5</h5>
+                            <p class="product-description">La consola de última generación con gráficos impresionantes.
+                            </p>
+                            <div class="product-price">$549.990 CLP</div>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(4.9)</span>
+                            </div>
+                            <button class="btn btn-neon-green w-100 add-to-cart" data-product="CO001">
+                                <i class="fas fa-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recommended Product 2 -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="product-card recommended">
+                        <div class="product-image">
+                            <img src="public/pc-gamer-asus.png" alt="PC ASUS ROG" class="product-img">
+                            <div class="product-badge">RECOMENDADO</div>
+                            <div class="product-hot">¡PREMIUM!</div>
+                        </div>
+                        <div class="product-info">
+                            <h5 class="product-title">PC Gamer ASUS ROG</h5>
+                            <p class="product-description">Potente equipo para los gamers más exigentes.</p>
+                            <div class="product-price">$1.299.990 CLP</div>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(5.0)</span>
+                            </div>
+                            <button class="btn btn-neon-green w-100 add-to-cart" data-product="CG001">
+                                <i class="fas fa-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recommended Product 3 -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="product-card recommended">
+                        <div class="product-image">
+                            <img src="public/silla-gamer-secretlab.png" alt="Silla Secretlab" class="product-img">
+                            <div class="product-badge">RECOMENDADO</div>
+                        </div>
+                        <div class="product-info">
+                            <h5 class="product-title">Silla Gamer Secretlab</h5>
+                            <p class="product-description">Máximo confort con soporte ergonómico.</p>
+                            <div class="product-price">$349.990 CLP</div>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(4.8)</span>
+                            </div>
+                            <button class="btn btn-neon-green w-100 add-to-cart" data-product="SG001">
+                                <i class="fas fa-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recommended Product 4 -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="product-card recommended">
+                        <div class="product-image">
+                            <img src="public/mouse-logitech-g502.png" alt="Mouse Logitech G502" class="product-img">
+                            <div class="product-badge">RECOMENDADO</div>
+                        </div>
+                        <div class="product-info">
+                            <h5 class="product-title">Mouse Logitech G502</h5>
+                            <p class="product-description">Sensor de alta precisión para control exacto.</p>
+                            <div class="product-price">$49.990 CLP</div>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(4.9)</span>
+                            </div>
+                            <button class="btn btn-neon-green w-100 add-to-cart" data-product="MS001">
+                                <i class="fas fa-cart-plus me-2"></i>Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="news-section py-5">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title">Noticias Gaming 2025</h2>
+                    <p class="section-subtitle">Mantente al día con las últimas novedades del mundo gamer</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="news-card">
+                        <div class="news-image">
+                            <img src="public/Generated Image September 11, 2025 - 3_39PM.png" alt="PlayStation 5 Pro"
+                                class="img-fluid" style="border-radius: 15px;">
+                        </div>
+                        <div class="news-content d-flex flex-column">
+                            <span class="news-date">11 Ene 2025</span>
+                            <h5 class="news-title">PlayStation 5 Pro llegará este año</h5>
+                            <p class="news-text">Sony confirma el lanzamiento de la esperada PS5 Pro con gráficos
+                                mejorados y soporte nativo para 8K en los nuevos televisores.</p>
+                            <a href="#" class="btn btn-outline-electric-blue btn-sm mt-auto" data-bs-toggle="modal"
+                                data-bs-target="#newsModal" data-news-title="PlayStation 5 Pro llegará este año"
+                                data-news-date="11 Ene 2025"
+                                data-news-image="public/Generated Image September 11, 2025 - 3_39PM.png"
+                                data-news-content="Sony confirma el lanzamiento de la esperada PS5 Pro con gráficos mejorados y soporte nativo para 8K en los nuevos televisores.">
+                                Leer más
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="news-card">
+                        <div class="news-image">
+                            <img src="public/indies.png" alt="Juegos Indie 2025" class="img-fluid"
+                                style="border-radius: 15px;">
+                        </div>
+                        <div class="news-content d-flex flex-column">
+                            <span class="news-date">05 Ene 2025</span>
+                            <h5 class="news-title">Los indies que dominarán el 2025</h5>
+                            <p class="news-text">Una nueva generación de estudios independientes presenta títulos que
+                                prometen redefinir la creatividad en la industria gamer.</p>
+                            <a href="#" class="btn btn-outline-electric-blue btn-sm mt-auto" data-bs-toggle="modal"
+                                data-bs-target="#newsModal" data-news-title="Los indies que dominarán el 2025"
+                                data-news-date="05 Ene 2025" data-news-image="public/indies.png"
+                                data-news-content="Una nueva generación de estudios independientes presenta títulos que prometen redefinir la creatividad en la industria gamer.">
+                                Leer más
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="news-card">
+                        <div class="news-image">
+                            <img src="public/partes.png" alt="Hardware Gaming 2025" class="img-fluid"
+                                style="border-radius: 15px;">
+                        </div>
+                        <div class="news-content d-flex flex-column">
+                            <span class="news-date">02 Ene 2025</span>
+                            <h5 class="news-title">Hardware gaming 2025: lo que viene</h5>
+                            <p class="news-text">Tarjetas gráficas más potentes, monitores 360Hz y nuevas tecnologías de
+                                refrigeración marcarán el ritmo este año.</p>
+                            <a href="#" class="btn btn-outline-electric-blue btn-sm mt-auto" data-bs-toggle="modal"
+                                data-bs-target="#newsModal" data-news-title="Hardware gaming 2025: lo que viene"
+                                data-news-date="02 Ene 2025" data-news-image="public/partes.png"
+                                data-news-content="Tarjetas gráficas más potentes, monitores 360Hz y nuevas tecnologías de refrigeración marcarán el ritmo este año.">
+                                Leer más
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="newsModal" tabindex="-1" aria-labelledby="newsModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content custom-modal">
+                    <div class="modal-header border-0">
+                        <h5 class="modal-title" id="newsModalLabel"></h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                            aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img id="newsModalImage" src="" class="img-fluid rounded mb-3" alt="">
+                        <p id="newsModalDate" class="text-white-50 small mb-2"></p>
+                        <p id="newsModalContent"></p>
+                    </div>
+                    <div class="modal-footer border-0">
+                        <button type="button" class="btn btn-outline-electric-blue"
+                            data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var newsModal = document.getElementById('newsModal');
+                newsModal.addEventListener('show.bs.modal', function (event) {
+                    // Botón que disparó el modal
+                    var button = event.relatedTarget;
+                    // Extrae la información de los atributos data-*
+                    var title = button.getAttribute('data-news-title');
+                    var date = button.getAttribute('data-news-date');
+                    var image = button.getAttribute('data-news-image');
+                    var content = button.getAttribute('data-news-content');
+
+                    // Actualiza el contenido del modal
+                    var modalTitle = newsModal.querySelector('.modal-title');
+                    var modalImage = newsModal.querySelector('#newsModalImage');
+                    var modalDate = newsModal.querySelector('#newsModalDate');
+                    var modalContent = newsModal.querySelector('#newsModalContent');
+
+                    modalTitle.textContent = title;
+                    modalImage.src = image;
+                    modalDate.textContent = 'Publicado: ' + date;
+                    modalContent.textContent = content;
+                });
+            });
+        </script>
+    </section>
+
+    <div class="modal fade" id="newsModal" tabindex="-1" aria-labelledby="newsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="newsModalLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="" alt="" class="img-fluid mb-3" id="modal-image">
+                    <p id="modal-date" class="text-muted"></p>
+                    <p id="modal-content"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+    <!-- Guides Section -->
+    <section class="videos-section py-5 bg-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="guide-card video-card">
+                        <div class="guide-icon">
+                            <img src="public/mantencion.png" alt="Ajuste de Brillo y Contraste"
+                                style="border-radius: 15px;" class="img-fluid" alt="A fading image">
+                        </div>
+                        <div class="guide-content">
+                            <h5>Video: 7 trucos para optimizar tu PC</h5>
+                            <p>Aprende a calibrar tu monitor para una mejor experiencia visual en tus juegos.</p>
+                            <div class="guide-meta">
+                                <span class="guide-difficulty">Principiante</span>
+                                <span class="guide-time">8 min</span>
+                            </div>
+                            <a href="#" class="btn btn-neon-green btn-sm" data-bs-toggle="modal"
+                                data-bs-target="#videoModal1">Ver video</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-4">
+                    <div class="guide-card video-card">
+                        <div class="guide-icon">
+                            <img src="public/optimizando.png" alt="Mantenimiento PC" style="border-radius: 15px;"
+                                class="img-fluid">
+                        </div>
+                        <div class="guide-content">
+                            <h5>Video: Cómo limpiar tu PC gaming</h5>
+                            <p>Guía paso a paso para limpiar tu hardware y evitar el sobrecalentamiento.</p>
+                            <div class="guide-meta">
+                                <span class="guide-difficulty">Intermedio</span>
+                                <span class="guide-time">6 min</span>
+                            </div>
+                            <a href="#" class="btn btn-neon-green btn-sm" data-bs-toggle="modal"
+                                data-bs-target="#videoModal2">Ver video</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h2 class="section-title">¿Listo para subir de nivel?</h2>
+                    <p class="section-subtitle mb-4">Únete a miles de gamers que ya confían en nosotros</p>
+                    <div class="cta-buttons">
+                        <a href="productos.html" class="btn btn-neon-green btn-lg me-3">
+                            <i class="fas fa-gamepad me-2"></i>Ver Productos
+                        </a>
+                        <a href="comunidad.html" class="btn btn-outline-electric-blue btn-lg">
+                            <i class="fas fa-users me-2"></i>Únete a la Comunidad
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Soporte Section -->
+    <section id="soporte" class="support-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title">Soporte Técnico</h2>
+                    <p class="section-subtitle">Estamos aquí para ayudarte</p>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="support-card text-center">
+                        <div class="support-icon">
+                            <i class="fab fa-whatsapp fa-4x"></i>
+                        </div>
+                        <h4>Chat de Soporte</h4>
+                        <p>¿Necesitas ayuda? Contáctanos directamente por WhatsApp para recibir soporte técnico
+                            inmediato.</p>
+                        <a href="https://wa.me/56912345678" class="btn btn-neon-green btn-lg mb-4" target="_blank">
+                            <i class="fab fa-whatsapp me-2"></i>Contactar Soporte
+                        </a>
+
+
+                        <p><img src="public/soporte.png" width="549" class="img-fluid" style="border-radius: 15px;"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="images/logo.png" alt="Level-Up Gamer" height="30" class="me-2">
+                        <h5 class="footer-title mb-0">Level-Up Gamer</h5>
+                    </div>
+                    <p>Tu tienda online de confianza para productos gaming en Chile. Despachos a todo el país.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 mb-4">
+                    <h6 class="footer-subtitle">Navegación</h6>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="comunidad.html">Comunidad</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 mb-4">
+                    <h6 class="footer-subtitle">Productos</h6>
+                    <ul class="footer-links">
+                        <li><a href="productos.html">Consolas</a></li>
+                        <li><a href="productos.html">PC Gamers</a></li>
+                        <li><a href="productos.html">Accesorios</a></li>
+                        <li><a href="productos.html">Sillas Gamers</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 mb-4">
+                    <h6 class="footer-subtitle">Comunidad</h6>
+                    <ul class="footer-links">
+                        <li><a href="comunidad.html">Programa Referidos</a></li>
+                        <li><a href="comunidad.html">Eventos</a></li>
+                        <li><a href="comunidad.html">Blog Gamer</a></li>
+                        <li><a href="comunidad.html">Reseñas</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 mb-4">
+                    <h6 class="footer-subtitle">Soporte</h6>
+                    <ul class="footer-links">
+                        <li><a href="contacto.html">Centro de Ayuda</a></li>
+                        <li><a href="contacto.html">Servicio Técnico</a></li>
+                        <li><a href="contacto.html">Garantías</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="footer-divider">
+
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="footer-copyright">
+                        © 2024 Level-Up Gamer. Todos los derechos reservados.
+                        <span class="text-electric-blue">¡Desafía tus límites!</span>
+                        <br><small><a href="admin-login.html" class="text-muted"
+                                style="text-decoration: none;">Admin</a></small>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Iniciar Sesión</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="password" required>
+                        </div>
+                        <div class="mb-3 text-center">
+                            <a href="#" class="text-electric-blue" data-bs-toggle="modal"
+                                data-bs-target="#forgotPasswordModal" data-bs-dismiss="modal">
+                                ¿Olvidaste tu contraseña?
+                            </a>
+                        </div>
+                        <button type="submit" class="btn btn-electric-blue w-100">Iniciar Sesión</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">Carrito de Compras</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Mensaje de confirmación (oculto al inicio) -->
+                    <div id="cartNotification" class="alert alert-success alert-dismissible fade show" role="alert"
+                        style="display: none;">
+                        ¡Carrito vaciado!
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+                    </div>
+                    <!-- Contenido del carrito -->
+                    <div id="cart-items">
+                        <p class="text-center">Tu carrito está vacío</p>
+                    </div>
+                    <!-- Total -->
+                    <div class="cart-total mt-3">
+                        <h5>Total: <span id="cart-total">$0 CLP</span></h5>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="btnClearCart" class="btn btn-outline-danger">
+                        Vaciar carrito
+                    </button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir Comprando</button>
+                    <button type="button" id="btnProcessOrder" class="btn btn-neon-green">
+                        Proceder al Pago
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Payment Modal -->
+    <div class="modal fade" id="paymentModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Finalizar Compra</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="fakePaymentForm">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nombre Completo</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="address" class="form-label">Dirección de Envío</label>
+                            <input type="text" class="form-control" id="address" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="paymentMethod" class="form-label">Método de Pago</label>
+                            <select class="form-select" id="paymentMethod" required>
+                                <option value="">Seleccione...</option>
+                                <option value="tarjeta">Tarjeta (simulado)</option>
+                                <option value="transferencia">Transferencia Bancaria (simulado)</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-neon-green w-100">Confirmar Pago</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Register Modal -->
+    <div class="modal fade" id="registerModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Registrarse</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="regName" class="form-label">Nombre Completo</label>
+                            <input type="text" class="form-control" id="regName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="regEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="regEmail" required>
+                            <div class="form-text">¿Tienes email @duocuc.cl? ¡Obtén 20% de descuento de por vida!</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="regAge" class="form-label">Fecha de Nacimiento</label>
+                            <input type="date" class="form-control" id="regAge" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="regPassword" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="regPassword" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="referralCode" class="form-label">Código de Referido (Opcional)</label>
+                            <input type="text" class="form-control" id="referralCode">
+                        </div>
+                        <!-- Agregando checkbox de términos y condiciones -->
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="acceptTerms" required>
+                            <label class="form-check-label" for="acceptTerms">
+                                Acepto los <a href="#" class="text-electric-blue" data-bs-toggle="modal"
+                                    data-bs-target="#termsModal">términos y condiciones</a>
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-neon-green w-100">Registrarse</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Agregando modal para recuperar contraseña -->
+    <!-- Forgot Password Modal -->
+    <div class="modal fade" id="forgotPasswordModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Recuperar Contraseña</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-muted">Ingresa tu email y te enviaremos una nueva contraseña temporal.</p>
+                    <form id="forgotPasswordForm">
+                        <div class="mb-3">
+                            <label for="forgotEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="forgotEmail" required>
+                        </div>
+                        <button type="submit" class="btn btn-electric-blue w-100">Enviar Nueva Contraseña</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Agregando modal de perfil de usuario -->
+    <!-- Profile Modal -->
+    <div class="modal fade" id="profileModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Mi Perfil</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="profileContent">
+                        <!-- Contenido del perfil se carga dinámicamente -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-electric-blue" onclick="openEditProfile()">Editar
+                        Perfil</button>
+                    <button type="button" class="btn btn-neon-green" onclick="openChangePassword()">Cambiar
+                        Contraseña</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Agregando modal para editar perfil -->
+    <!-- Edit Profile Modal -->
+    <div class="modal fade" id="editProfileModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Editar Perfil</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editProfileForm">
+                        <div class="mb-3">
+                            <label for="editName" class="form-label">Nombre Completo</label>
+                            <input type="text" class="form-control" id="editName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="editEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editBirthDate" class="form-label">Fecha de Nacimiento</label>
+                            <input type="date" class="form-control" id="editBirthDate" required>
+                        </div>
+                        <button type="submit" class="btn btn-electric-blue w-100">Guardar Cambios</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Agregando modal para cambiar contraseña -->
+    <!-- Change Password Modal -->
+    <div class="modal fade" id="changePasswordModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Cambiar Contraseña</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="changePasswordForm">
+                        <div class="mb-3">
+                            <label for="currentPassword" class="form-label">Contraseña Actual</label>
+                            <input type="password" class="form-control" id="currentPassword" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="newPassword" class="form-label">Nueva Contraseña</label>
+                            <input type="password" class="form-control" id="newPassword" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label">Confirmar Nueva Contraseña</label>
+                            <input type="password" class="form-control" id="confirmPassword" required>
+                        </div>
+                        <button type="submit" class="btn btn-electric-blue w-100">Cambiar Contraseña</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Model de ventana de informacion-->
+    <div class="modal fade" id="productModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalTitle">Detalles del Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img id="productModalImage" src="/placeholder.svg" alt="" class="img-fluid rounded">
+                        </div>
+                        <div class="col-md-6">
+                            <h4 id="productModalName"></h4>
+                            <p id="productModalDescription" class="text-muted"></p>
+                            <div class="mb-3">
+                                <span class="h4 text-neon-green" id="productModalPrice"></span>
+                            </div>
+                            <div class="mb-3">
+                                <h6>Calificación:</h6>
+                                <div id="productModalRating" class="product-rating mb-2"></div>
+                                <small class="text-muted" id="productModalRatingCount"></small>
+                            </div>
+                            <div class="mb-3">
+                                <span class="badge bg-secondary" id="productModalCode"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <span class="badge bg-secondary" id="productModalCode"></span>
+                        <button id="favoriteBtn" class="btn btn-outline-warning btn-sm mt-2">
+                            <i class="fas fa-star"></i> Favorito
+                        </button>
+                    </div>
+                    <div class="mt-3">
+                        
+                        <span>Compartir producto:</span>
+                        <div class="d-flex gap-2 mt-1">
+                            <!-- Facebook -->
+                            <a href="#" id="shareFacebook" class="btn btn-primary btn-sm" target="_blank">
+                                <i class="fab fa-facebook-f"></i> Facebook
+                            </a>
+                            <!-- Twitter -->
+                            <a href="#" id="shareTwitter" class="btn btn-info btn-sm" target="_blank">
+                                <i class="fab fa-twitter"></i> Twitter
+                            </a>
+                            <!-- WhatsApp -->
+                            <a href="#" id="shareWhatsApp" class="btn btn-success btn-sm" target="_blank">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <!-- Comments Section -->
+                    <div class="mt-4">
+                        <h6>Comentarios de Clientes:</h6>
+                        <div id="productComments" class="comments-section">
+                            <!-- Comments will be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Review Form -->
+                    <div class="mt-4">
+                        <h6>Deja tu reseña:</h6>
+                        <form id="reviewForm">
+                            <div class="mb-3">
+                                <label for="reviewRating" class="form-label">Calificación:</label>
+                                <div id="reviewRating" class="star-rating">
+                                    <input type="radio" name="rating" value="5" id="star5"><label for="star5">★</label>
+                                    <input type="radio" name="rating" value="4" id="star4"><label for="star4">★</label>
+                                    <input type="radio" name="rating" value="3" id="star3"><label for="star3">★</label>
+                                    <input type="radio" name="rating" value="2" id="star2"><label for="star2">★</label>
+                                    <input type="radio" name="rating" value="1" id="star1"><label for="star1">★</label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="reviewText" class="form-label">Tu comentario:</label>
+                                <textarea class="form-control" id="reviewText" rows="3" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-neon-green">Enviar Reseña</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <link rel="stylesheet" href="styles.css">
+
+    </head>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

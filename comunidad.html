@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunidad - Level-Up Gamer</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Orbitron:wght@400;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- ====== NAVEGACIÓN ====== -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="Level-Up Gamer" height="40" class="me-2">
+                <span class="brand-text">Level-Up Gamer</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="productos.html">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="comunidad.html">Comunidad</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+
+                <div class="navbar-nav">
+                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        <i class="fas fa-user me-1"></i>Iniciar Sesión
+                    </a>
+
+                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#registerModal">
+                        <i class="fas fa-user-plus me-1"></i>Registrarse
+                    </a>
+                     <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#cartModal">
+                        <i class="fas fa-shopping-cart me-1"></i>
+                        Carrito <span id="cart-counter" class="badge bg-neon-green">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ====== ENCABEZADO DE PÁGINA ====== -->
+    <section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="page-title">Comunidad Gamer</h1>
+                    <p class="page-subtitle">Únete, comparte y gana puntos LevelUp</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== CARACTERÍSTICAS DE LA COMUNIDAD ====== -->
+    <section class="community-section py-4">
+        <div class="container">
+            <div class="row">
+                <!-- Card 1: Programa de Referidos -->
+                <div class="col-lg-4 mb-4 d-flex">
+                    <div class="community-card flex-fill">
+                        <div class="community-icon">
+                            <i class="fas fa-users fa-3x"></i>
+                        </div>
+                        <h4>Programa de Referidos</h4>
+                        <p>Invita a tus amigos y gana puntos LevelUp por cada nuevo usuario que se registre con tu
+                            código de referido.</p>
+                        <div class="image-placeholder small">
+                            <img src="public/refe.png" alt="Programa de Referidos" class="img-fluid">
+                        </div>
+                        <div class="mt-3">
+                            <strong class="text-neon-green">+200 Puntos LevelUp</strong> por cada referido
+                        </div>
+                        <!-- Botón flotante de compartir -->
+                        <button id="shareBtn" class="share-btn">
+                            <i class="fas fa-share-alt"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 2: Sistema de Niveles -->
+                <div class="col-lg-4 mb-4 d-flex">
+                    <div class="community-card flex-fill">
+                        <div class="community-icon">
+                            <i class="fas fa-trophy fa-3x"></i>
+                        </div>
+                        <h4>Sistema de Niveles</h4>
+                        <p>Sube de nivel con tus puntos LevelUp y desbloquea descuentos exclusivos con los que podrás acceder a productos y promociones especiales.</p>
+                        <div class="image-placeholder small">
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal">
+                                <img src="public/rank.png" alt="Sistema de Niveles" class="img-fluid">
+                            </a>
+                        </div>
+                        <div class="level-progress mt-3">
+                            <!-- Barra de progreso se puede agregar aquí -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Eventos Gamers -->
+                <div class="col-lg-4 mb-4 d-flex">
+                    <div class="community-card flex-fill">
+                        <div class="community-icon">
+                            <i class="fas fa-map-marker-alt fa-3x"></i>
+                        </div>
+                        <h4>Eventos Gamers</h4>
+                        <p>Participa en eventos gaming a nivel nacional y gana puntos LevelUp adicionales, los que podrás cambiar por recompensas exclusivas.</p>
+                        <div class="image-placeholder small">
+                            <img src="public/fifa.png" alt="Eventos Gamers" class="img-fluid">
+                        </div>
+                        <div class="mt-3">
+                            <strong class="text-electric-blue">Próximo evento:</strong><br>
+                            <small>Torneo EA FC26 - Santiago</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== SISTEMA DE NIVELES ====== -->
+    <section class="levels-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title">Sistema de Niveles LevelUp</h2>
+                    <p class="section-subtitle">Gana puntos y desbloquea beneficios exclusivos</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Nivel 1: Novato -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="level-card text-center">
+                        <div class="level-icon bronze">
+                            <i class="fas fa-medal fa-3x"></i>
+                        </div>
+                        <h4>Nivel 1 - Novato</h4>
+                        <p class="level-points">0 - 999 puntos</p>
+                        <ul class="level-benefits">
+                            <li>5% descuento en compras</li>
+                            <li>Envío gratis sobre $50.000</li>
+                            <li>Acceso a ofertas básicas</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Nivel 2: Gamer -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="level-card text-center">
+                        <div class="level-icon silver">
+                            <i class="fas fa-medal fa-3x"></i>
+                        </div>
+                        <h4>Nivel 2 - Gamer</h4>
+                        <p class="level-points">1.000 - 4.999 puntos</p>
+                        <ul class="level-benefits">
+                            <li>10% descuento en compras</li>
+                            <li>Envío gratis sobre $30.000</li>
+                            <li>Acceso a pre-órdenes</li>
+                            <li>Soporte prioritario</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Nivel 3: Pro Gamer -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="level-card text-center">
+                        <div class="level-icon gold">
+                            <i class="fas fa-medal fa-3x"></i>
+                        </div>
+                        <h4>Nivel 3 - Pro Gamer</h4>
+                        <p class="level-points">5.000 - 14.999 puntos</p>
+                        <ul class="level-benefits">
+                            <li>15% descuento en compras</li>
+                            <li>Envío gratis siempre</li>
+                            <li>Productos exclusivos</li>
+                            <li>Invitaciones a eventos</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Nivel 4: Elite -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="level-card text-center">
+                        <div class="level-icon diamond">
+                            <i class="fas fa-crown fa-3x"></i>
+                        </div>
+                        <h4>Nivel 4 - Elite</h4>
+                        <p class="level-points">15.000+ puntos</p>
+                        <ul class="level-benefits">
+                            <li>20% descuento en compras</li>
+                            <li>Acceso VIP a lanzamientos</li>
+                            <li>Productos personalizados</li>
+                            <li>Asesor personal</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== EVENTOS Y MAPA ====== -->
+    <section class="events-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title">Eventos Gaming en Chile</h2>
+                    <p class="section-subtitle">Participa y gana puntos LevelUp</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Mapa de Eventos -->
+                <div class="col-lg-8">
+                    <div class="map-placeholder"
+                        style="height: 500px; border-radius: 12px; overflow: hidden; background:#2c2c2c;">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d652.5384392806294!2d-73.06219573300052!3d-36.795319233661225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9669b5007e905bfb%3A0x1768cdab07f89353!2sAuditorio%20Duoc%20UC!5e0!3m2!1ses!2scl!4v1758418837089!5m2!1ses!2scl"
+                            width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Lista de Próximos Eventos -->
+                <div class="col-lg-4">
+                    <div class="events-list">
+                        <h4>Próximos Eventos</h4>
+
+                        <!-- Evento 1 -->
+                        <div class="event-item">
+                            <div class="event-date">
+                                <span class="day">15</span>
+                                <span class="month">MAR</span>
+                            </div>
+                            <div class="event-info">
+                                <h5>Torneo EA FC26</h5>
+                                <p><i class="fas fa-map-marker-alt"></i> Santiago, RM</p>
+                                <span class="event-points">+1000 Puntos LevelUp</span>
+                            </div>
+                        </div>
+
+                        <!-- Evento 2 -->
+                        <div class="event-item">
+                            <div class="event-date">
+                                <span class="day">22</span>
+                                <span class="month">MAR</span>
+                            </div>
+                            <div class="event-info">
+                                <h5>League of Legends Cup</h5>
+                                <p><i class="fas fa-map-marker-alt"></i> Valparaíso, V</p>
+                                <span class="event-points">+1500 Puntos LevelUp</span>
+                            </div>
+                        </div>
+
+                        <!-- Evento 3 -->
+                        <div class="event-item">
+                            <div class="event-date">
+                                <span class="day">05</span>
+                                <span class="month">ABR</span>
+                            </div>
+                            <div class="event-info">
+                                <h5>Retro Gaming Fest</h5>
+                                <p><i class="fas fa-map-marker-alt"></i> Concepción, VIII</p>
+                                <span class="event-points">+800 Puntos LevelUp</span>
+                            </div>
+                        </div>
+
+                        <!-- Evento 4 -->
+                        <div class="event-item">
+                            <div class="event-date">
+                                <span class="day">12</span>
+                                <span class="month">ABR</span>
+                            </div>
+                            <div class="event-info">
+                                <h5>Fortnite Championship</h5>
+                                <p><i class="fas fa-map-marker-alt"></i> La Serena, IV</p>
+                                <span class="event-points">+2000 Puntos LevelUp</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== BLOG GAMER ====== -->
+    <section class="blog-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title">Blog Gamer</h2>
+                    <p class="section-subtitle">Noticias, guías y consejos para gamers</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Artículo 1 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="blog-card news-card">
+                        <div class="blog-image news-image">
+                            <img src="public/mejores.png" alt="Los Mejores Juegos de 2025" class="img-fluid">
+                        </div>
+                        <div class="blog-content news-content d-flex flex-column">
+                            <span class="blog-date news-date">10 Mar 2025</span>
+                            <h5 class="blog-title news-title">Los Mejores Juegos de 2025</h5>
+                            <p>Descubre los títulos más esperados del año y por qué deberías tenerlos en tu colección.
+                            </p>
+                            <a href="#" class="btn btn-outline-electric-blue btn-sm mt-auto" data-bs-toggle="modal"
+                                data-bs-target="#modalJuegos">Leer más</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Artículo 2 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="blog-card news-card">
+                        <div class="blog-image news-image">
+                            <img src="public/armar.png" alt="Cómo Armar tu PC Gamer" class="img-fluid">
+                        </div>
+                        <div class="blog-content news-content d-flex flex-column">
+                            <span class="blog-date news-date">8 Mar 2025</span>
+                            <h5 class="blog-title news-title">Guía: Cómo Armar tu PC Gamer</h5>
+                            <p>Todo lo que necesitas saber para construir tu primera computadora gaming.</p>
+                            <a href="#" class="btn btn-outline-electric-blue btn-sm mt-auto" data-bs-toggle="modal"
+                                data-bs-target="#modalPC">Leer más</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Artículo 3 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="blog-card news-card">
+                        <div class="blog-image news-image">
+                            <img src="public/tendencias.png" alt="Tendencias Gaming 2025-2026" class="img-fluid">
+                        </div>
+                        <div class="blog-content news-content d-flex flex-column">
+                            <span class="blog-date news-date">5 Mar 2025</span>
+                            <h5 class="blog-title news-title">Tendencias Gaming 2025-2026</h5>
+                            <p>Las tecnologías y géneros que marcarán el futuro de los videojuegos este año.</p>
+                            <a href="#" class="btn btn-outline-electric-blue btn-sm mt-auto" data-bs-toggle="modal"
+                                data-bs-target="#modalTendencias">Leer más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== FOOTER ====== -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Información de la empresa -->
+                <div class="col-lg-4 mb-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="images/logo.png" alt="Level-Up Gamer" height="30" class="me-2">
+                        <h5 class="footer-title mb-0">Level-Up Gamer</h5>
+                    </div>
+                    <p>Tu tienda online de confianza para productos gaming en Chile. Despachos a todo el país.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Navegación -->
+                <div class="col-lg-2 mb-4">
+                    <h6 class="footer-subtitle">Navegación</h6>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="comunidad.html">Comunidad</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <!-- Productos -->
+                <div class="col-lg-2 mb-4">
+                    <h6 class="footer-subtitle">Productos</h6>
+                    <ul class="footer-links">
+                        <li><a href="productos.html">Consolas</a></li>
+                        <li><a href="productos.html">PC Gamers</a></li>
+                        <li><a href="productos.html">Accesorios</a></li>
+                        <li><a href="productos.html">Sillas Gamers</a></li>
+                    </ul>
+                </div>
+
+                <!-- Comunidad -->
+                <div class="col-lg-2 mb-4">
+                    <h6 class="footer-subtitle">Comunidad</h6>
+                    <ul class="footer-links">
+                        <li><a href="comunidad.html">Programa Referidos</a></li>
+                        <li><a href="comunidad.html">Eventos</a></li>
+                        <li><a href="comunidad.html">Blog Gamer</a></li>
+                        <li><a href="comunidad.html">Reseñas</a></li>
+                    </ul>
+                </div>
+
+                <!-- Soporte -->
+                <div class="col-lg-2 mb-4">
+                    <h6 class="footer-subtitle">Soporte</h6>
+                    <ul class="footer-links">
+                        <li><a href="contacto.html">Centro de Ayuda</a></li>
+                        <li><a href="contacto.html">Servicio Técnico</a></li>
+                        <li><a href="contacto.html">Garantías</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="footer-divider">
+
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="footer-copyright">
+                        © 2024 Level-Up Gamer. Todos los derechos reservados.
+                        <span class="text-electric-blue">¡Desafía tus límites!</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ====== MODALES GLOBALES ====== -->
+    
+    <!-- Modal: Imagen Ampliada -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content bg-transparent border-0">
+                <div class="modal-header border-0 pb-0">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="public/rank.png" class="img-fluid" alt="Sistema de Niveles">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Compartir (GLOBAL - se puede usar en toda la página) -->
+    <div id="shareModal" class="share-modal">
+        <div class="share-content">
+            <span class="close-btn" id="closeShareModal">&times;</span>
+            <h3>¡Comparte tu código de referido!</h3>
+            <p>Invita a tus amigos y gana puntos LevelUp.</p>
+
+            <div class="share-options">
+                <a id="whatsappShare"
+                    href="https://api.whatsapp.com/send?text=Únete a LevelUp con mi código LEVELUPGAMER25 https://tusitio.com/registro?ref=LEVELUPGAMER25"
+                    target="_blank" class="share-option whatsapp">
+                    📱 WhatsApp
+                </a>
+                <a id="facebookShare"
+                    href="https://www.facebook.com/sharer/sharer.php?u=https://tusitio.com/registro?ref=LEVELUPGAMER25"
+                    target="_blank" class="share-option facebook">
+                    📘 Facebook
+                </a>
+                <a id="twitterShare"
+                    href="https://twitter.com/intent/tweet?text=Únete a LevelUp con mi código LEVELUPGAMER25&url=https://tusitio.com/registro?ref=LEVELUPGAMER25"
+                    target="_blank" class="share-option twitter">
+                    🐦 Twitter
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modales del Blog -->
+    <!-- Modal: Juegos 2025 -->
+    <div class="modal fade" id="modalJuegos" tabindex="-1" aria-labelledby="modalJuegosLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content custom-modal">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" id="modalJuegosLabel">Los Mejores Juegos de 2025</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="public/mejores.png" class="img-fluid rounded mb-3" alt="">
+                    <p>Descubre los títulos más esperados del año y por qué deberías tenerlos en tu colección.</p>
+                    <p>En esta guía ampliada encontrarás detalles de los juegos más anticipados, sus géneros,
+                        desarrolladores y por qué marcarán tendencia en 2025.</p>
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-outline-electric-blue" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: PC Gamer -->
+    <div class="modal fade" id="modalPC" tabindex="-1" aria-labelledby="modalPCLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content custom-modal">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" id="modalPCLabel">Guía: Cómo Armar tu PC Gamer</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="public/armar.png" class="img-fluid rounded mb-3" alt="">
+                    <p>Todo lo que necesitas saber para construir tu primera computadora gaming.</p>
+                    <p>Incluye recomendaciones de hardware, compatibilidad, optimización del rendimiento y consejos
+                        prácticos para cada presupuesto.</p>
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-outline-electric-blue" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Tendencias Gaming -->
+    <div class="modal fade" id="modalTendencias" tabindex="-1" aria-labelledby="modalTendenciasLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content custom-modal">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" id="modalTendenciasLabel">Tendencias Gaming 2025-2026</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="public/tendencias.png" class="img-fluid rounded mb-3" alt="">
+                    <p>Las tecnologías y géneros que marcarán el futuro de los videojuegos este año.</p>
+                    <p>Exploramos el impacto de la realidad aumentada, inteligencia artificial en los NPCs, y las nuevas
+                        experiencias multijugador.</p>
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-outline-electric-blue" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Login -->
+    <div class="modal fade" id="loginModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Iniciar Sesión</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="password" required>
+                        </div>
+                        <div class="mb-3 text-center">
+                            <a href="#" class="text-electric-blue" data-bs-toggle="modal"
+                                data-bs-target="#forgotPasswordModal" data-bs-dismiss="modal">
+                                ¿Olvidaste tu contraseña?
+                            </a>
+                        </div>
+                        <button type="submit" class="btn btn-electric-blue w-100">Iniciar Sesión</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">Carrito de Compras</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Mensaje de confirmación (oculto al inicio) -->
+                    <div id="cartNotification" class="alert alert-success alert-dismissible fade show" role="alert"
+                        style="display: none;">
+                        ¡Carrito vaciado!
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+                    </div>
+                    <!-- Contenido del carrito -->
+                    <div id="cart-items">
+                        <p class="text-center">Tu carrito está vacío</p>
+                    </div>
+                    <!-- Total -->
+                    <div class="cart-total mt-3">
+                        <h5>Total: <span id="cart-total">$0 CLP</span></h5>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="btnClearCart" class="btn btn-outline-danger">
+                        Vaciar carrito
+                    </button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir Comprando</button>
+                    <button type="button" id="btnProcessOrder" class="btn btn-neon-green">
+                        Proceder al Pago
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Registro -->
+    <div class="modal fade" id="registerModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Registrarse</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="regName" class="form-label">Nombre Completo</label>
+                            <input type="text" class="form-control" id="regName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="regEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="regEmail" required>
+                            <div class="form-text">¿Tienes email @duocuc.cl? ¡Obtén 20% de descuento de por vida!</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="regAge" class="form-label">Fecha de Nacimiento</label>
+                            <input type="date" class="form-control" id="regAge" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="regPassword" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="regPassword" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="referralCode" class="form-label">Código de Referido (Opcional)</label>
+                            <input type="text" class="form-control" id="referralCode">
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="acceptTerms" required>
+                            <label class="form-check-label" for="acceptTerms">
+                                Acepto los <a href="#" class="text-electric-blue" data-bs-toggle="modal"
+                                    data-bs-target="#termsModal">términos y condiciones</a>
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-neon-green w-100">Registrarse</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Recuperar Contraseña -->
+    <div class="modal fade" id="forgotPasswordModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Recuperar Contraseña</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-muted">Ingresa tu email y te enviaremos una nueva contraseña temporal.</p>
+                    <form id="forgotPasswordForm">
+                        <div class="mb-3">
+                            <label for="forgotEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="forgotEmail" required>
+                        </div>
+                        <button type="submit" class="btn btn-electric-blue w-100">Enviar Nueva Contraseña</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Perfil de Usuario -->
+    <div class="modal fade" id="profileModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Mi Perfil</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="profileContent">
+                        <!-- Contenido del perfil se carga dinámicamente -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-electric-blue" onclick="openEditProfile()">Editar
+                        Perfil</button>
+                    <button type="button" class="btn btn-neon-green" onclick="openChangePassword()">Cambiar
+                        Contraseña</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Payment Modal -->
+    <div class="modal fade" id="paymentModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Finalizar Compra</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="fakePaymentForm">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nombre Completo</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="address" class="form-label">Dirección de Envío</label>
+                            <input type="text" class="form-control" id="address" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="paymentMethod" class="form-label">Método de Pago</label>
+                            <select class="form-select" id="paymentMethod" required>
+                                <option value="">Seleccione...</option>
+                                <option value="tarjeta">Tarjeta (simulado)</option>
+                                <option value="transferencia">Transferencia Bancaria (simulado)</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-neon-green w-100">Confirmar Pago</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal: Editar Perfil -->
+    <div class="modal fade" id="editProfileModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Editar Perfil</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editProfileForm">
+                        <div class="mb-3">
+                            <label for="editName" class="form-label">Nombre Completo</label>
+                            <input type="text" class="form-control" id="editName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="editEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editBirthDate" class="form-label">Fecha de Nacimiento</label>
+                            <input type="date" class="form-control" id="editBirthDate" required>
+                        </div>
+                        <button type="submit" class="btn btn-electric-blue w-100">Guardar Cambios</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Cambiar Contraseña -->
+    <div class="modal fade" id="changePasswordModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Cambiar Contraseña</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="changePasswordForm">
+                        <div class="mb-3">
+                            <label for="currentPassword" class="form-label">Contraseña Actual</label>
+                            <input type="password" class="form-control" id="currentPassword" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="newPassword" class="form-label">Nueva Contraseña</label>
+                            <input type="password" class="form-control" id="newPassword" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label">Confirmar Nueva Contraseña</label>
+                            <input type="password" class="form-control" id="confirmPassword" required>
+                        </div>
+                        <button type="submit" class="btn btn-electric-blue w-100">Cambiar Contraseña</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- ====== SCRIPTS ====== -->
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

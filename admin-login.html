@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Administrador - Level-Up Gamer</title>
+    
+     Bootstrap CSS 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+     Google Fonts 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    
+     Font Awesome 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+     Custom CSS 
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        .admin-login-container {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .login-card {
+            background: rgba(30, 144, 255, 0.1);
+            border: 2px solid #1E90FF;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            max-width: 400px;
+            width: 100%;
+            box-shadow: 0 20px 40px rgba(30, 144, 255, 0.3);
+        }
+        
+        .login-logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .admin-badge {
+            background: linear-gradient(45deg, #1E90FF, #39FF14);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-login-container">
+        <div class="login-card">
+            <div class="login-logo">
+                <img src="images/logo.png" alt="Level-Up Gamer" height="60" class="mb-3">
+                <h3 class="text-white mb-2">Panel de Administración</h3>
+                <span class="admin-badge">
+                    <i class="fas fa-shield-alt me-1"></i>ADMIN ACCESS
+                </span>
+            </div>
+            
+            <form id="adminLoginForm">
+                <div class="mb-3">
+                    <label for="adminEmail" class="form-label text-white">
+                        <i class="fas fa-user me-2"></i>Email de Administrador
+                    </label>
+                    <input type="email" class="form-control" id="adminEmail" value="admin@levelupgamer.cl" required>
+                </div>
+                
+                <div class="mb-4">
+                    <label for="adminPassword" class="form-label text-white">
+                        <i class="fas fa-lock me-2"></i>Contraseña
+                    </label>
+                    <input type="password" class="form-control" id="adminPassword" placeholder="Ingresa: admin123" required>
+                </div>
+                
+                <button type="submit" class="btn btn-admin w-100 mb-3">
+                    <i class="fas fa-sign-in-alt me-2"></i>Acceder al Panel
+                </button>
+                
+                <div class="text-center">
+                    <a href="index.html" class="text-electric-blue">
+                        <i class="fas fa-arrow-left me-1"></i>Volver a la Tienda
+                    </a>
+                </div>
+            </form>
+            
+            <div class="mt-4 p-3 bg-dark rounded">
+                <small class="text-light-gray">
+                    <i class="fas fa-info-circle me-2 text-electric-blue"></i>
+                    <strong>Credenciales de prueba:</strong><br>
+                    Email: admin@levelupgamer.cl<br>
+                    Contraseña: admin123
+                </small>
+            </div>
+        </div>
+    </div>
+
+     Bootstrap JS 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        document.getElementById('adminLoginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('adminEmail').value;
+            const password = document.getElementById('adminPassword').value;
+            
+            // Validación simple (en producción usar autenticación real)
+            if (email === 'admin@levelupgamer.cl' && password === 'admin123') {
+                localStorage.setItem('isAdmin', 'true');
+                localStorage.setItem('adminEmail', email);
+                window.location.href = 'admin.html';
+            } else {
+                alert('Credenciales incorrectas. Usa admin@levelupgamer.cl / admin123');
+            }
+        });
+    </script>
+</body>
+</html>
