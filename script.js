@@ -86,11 +86,21 @@ function saveDataToStorage() {
 /**
  * Agrega un producto normal (con precio en CLP) al carrito.
  */
+let addToCartLocked = false;
+
 function addToCart(productId) {
+  if (addToCartLocked) {
+    console.log("[v1] Acción bloqueada temporalmente para evitar múltiples clics");
+    return;
+  }
+  
+  addToCartLocked = true;
+  
   const product = products[productId];
   if (!product) {
     console.error("[v1] Product not found:", productId);
     showNotification("Producto no encontrado", "danger");
+    addToCartLocked = false;
     return;
   }
 
@@ -108,9 +118,14 @@ function addToCart(productId) {
   }
 
   saveDataToStorage();
-  updateCartCounter(); // El contador del navbar siempre está presente
+  updateCartCounter(); 
   showCartNotification(product.name);
   console.log("[v1] Product added to cart:", product.name);
+  
+  // Desbloquea la función después de 1 segundo
+  setTimeout(() => {
+    addToCartLocked = false;
+  }, 1000);
 }
 
 /**
