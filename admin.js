@@ -97,17 +97,42 @@ function addProduct(action = 'save') {
     return;
   }
 
+  const code = document.getElementById("productCode").value.trim();
+  const name = document.getElementById("productName").value.trim();
+  const price = Number.parseInt(document.getElementById("productPrice").value);
+  const stock = Number.parseInt(document.getElementById("productStock").value);
+
+  // Validar que código y nombre no estén vacíos
+  if (!code) {
+    alert("El código no puede estar vacío.");
+    return;
+  }
+  if (!name) {
+    alert("El nombre no puede estar vacío.");
+    return;
+  }
+
+  // Validación para precio mínimo 1000 y stock mayor a 0
+  if (isNaN(price) || price < 1000) {
+    alert("El precio debe ser un número mayor o igual a 1000.");
+    return;
+  }
+  if (isNaN(stock) || stock <= 0) {
+    alert("El stock debe ser un número mayor que cero.");
+    return;
+  }
+
   let imageSource = document.getElementById("productImage").value;
   const imageFile = document.getElementById("productImageFile").files[0];
 
   const processImage = (imageSrc) => {
     const newProduct = {
       id: Date.now(),
-      code: document.getElementById("productCode").value,
-      name: document.getElementById("productName").value,
+      code: code,
+      name: name,
       category: document.getElementById("productCategory").value,
-      price: Number.parseInt(document.getElementById("productPrice").value),
-      stock: Number.parseInt(document.getElementById("productStock").value),
+      price: price,
+      stock: stock,
       rating: Number.parseFloat(document.getElementById("productRating").value),
       description: document.getElementById("productDescription").value,
       image: imageSrc,
@@ -143,6 +168,8 @@ function addProduct(action = 'save') {
     processImage(imageSource);
   }
 }
+
+
 
 function editProduct(id) {
   const product = products.find((p) => p.id === id);
@@ -716,4 +743,90 @@ if (refreshOrdersBtn) {
     const searchQuery = document.getElementById("orderSearchInput").value;
     cargarPedidos(orderDirection, searchQuery);
   });
+}
+// Manejo de usuarios por administrador
+document.getElementById("addUserForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const run = document.getElementById("adminUserRun").value.trim().toUpperCase();
+  const name = document.getElementById("adminUserName").value.trim();
+  const lastName = document.getElementById("adminUserLastName").value.trim();
+  const email = document.getElementById("adminUserEmail").value.trim().toLowerCase();
+  const password = document.getElementById("adminUserPassword").value;
+  const userType = document.getElementById("adminUserType").value;
+  const address = document.getElementById("adminUserAddress").value.trim();
+
+  // === Validaciones ===
+  if (name.length < 2) {
+    showNotification("El nombre debe tener al menos 2 letras.", "warning");
+    return;
+  }
+
+  if (lastName.length < 2) {
+    showNotification("El apellido debe tener al menos 2 letras.", "warning");
+    return;
+  }
+
+  if (!address || address.length > 300) {
+    showNotification("La dirección es obligatoria y debe tener máximo 300 caracteres.", "warning");
+    return;
+  }
+
+  if (users.some(u => u.email === email)) {
+    showNotification("Este correo ya está registrado.", "warning");
+    return;
+  }
+
+  // === Crear usuario ===
+  const newUser = {
+    id: Date.now().toString(),
+    run,
+    name,
+    lastName,
+    email,
+    password,
+    userType,
+    address,
+    level: 1,
+    levelUpPoints: 0,
+    discount: 0,
+    status: "activo",
+    registrationDate: new Date().toISOString()
+  };
+
+  users.push(newUser);
+  saveDataToStorage();
+  renderUsersTable();
+
+  bootstrap.Modal.getInstance(document.getElementById("addUserModal")).hide();
+  e.target.reset();
+
+  showNotification("Usuario agregado correctamente", "success");
+});
+function renderUsersTable() {
+  const tbody = document.getElementById("usersTableBody");
+  tbody.innerHTML = "";
+
+  users.forEach((user) => {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${user.id}</td>
+      <td>${user.name} ${user.lastName}</td>
+      <td>${user.email}</td>
+      <td>${new Date(user.registrationDate).toLocaleDateString()}</td>
+      <td>${user.userType}</td>
+      <td>${user.levelUpPoints || 0}</td>
+      <td>${user.status}</td>
+      <td>
+        <button class="btn btn-sm btn-outline-danger" onclick="deleteUser('${user.id}')">
+          <i class="fas fa-trash"></i>
+        </button>
+      </td>
+    `;
+    tbody.appendChild(row);
+  });
+}
+function updateUserInterface() {
+  const isAdmin = currentUser?.userType === "Administrador";
+  document.getElementById("users").style.display = isAdmin ? "block" : "none";
 }

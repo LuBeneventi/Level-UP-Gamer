@@ -129,17 +129,19 @@
 
             <div class="row">
                 <!-- Recommended Product 1 -->
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="product-card recommended">
+                <div class="col-lg-3 col-md-6 mb-4 product-item" data-category="consolas">
+                    <div class="product-card">
                         <div class="product-image">
-                            <img src="public/playstation-5-console.png" alt="PlayStation 5" class="product-img">
-                            <div class="product-badge">RECOMENDADO</div>
+                            <img src="public/playstation-5-console.png" alt="PlayStation 5"
+                                class="product-img product-clickable-img" data-bs-toggle="modal"
+                                data-bs-target="#productModal" data-product="CO001">
+                            <div class="product-badge">CO001</div>
                             <div class="product-hot">¡HOT!</div>
                         </div>
                         <div class="product-info">
                             <h5 class="product-title">PlayStation 5</h5>
-                            <p class="product-description">La consola de última generación con gráficos impresionantes.
-                            </p>
+                            <p class="product-description">La consola de última generación de Sony, que ofrece gráficos
+                                impresionantes y tiempos de carga ultrarrápidos.</p>
                             <div class="product-price">$549.990 CLP</div>
                             <div class="product-rating">
                                 <i class="fas fa-star"></i>
@@ -157,16 +159,19 @@
                 </div>
 
                 <!-- Recommended Product 2 -->
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="product-card recommended">
+                <div class="col-lg-3 col-md-6 mb-4 product-item" data-category="computadores">
+                    <div class="product-card">
                         <div class="product-image">
-                            <img src="public/pc-gamer-asus.png" alt="PC ASUS ROG" class="product-img">
-                            <div class="product-badge">RECOMENDADO</div>
+                            <img src="public/pc-gamer-asus.png" alt="PC ASUS ROG"
+                                class="product-img product-clickable-img" data-bs-toggle="modal"
+                                data-bs-target="#productModal" data-product="CG001">
+                            <div class="product-badge">CG001</div>
                             <div class="product-hot">¡PREMIUM!</div>
                         </div>
                         <div class="product-info">
-                            <h5 class="product-title">PC Gamer ASUS ROG</h5>
-                            <p class="product-description">Potente equipo para los gamers más exigentes.</p>
+                            <h5 class="product-title">PC Gamer ASUS ROG Strix</h5>
+                            <p class="product-description">Un potente equipo diseñado para los gamers más exigentes,
+                                equipado con los últimos componentes.</p>
                             <div class="product-price">$1.299.990 CLP</div>
                             <div class="product-rating">
                                 <i class="fas fa-star"></i>
@@ -182,17 +187,23 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- Recommended Product 3 -->
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="product-card recommended">
+                <div class="col-lg-3 col-md-6 mb-4 product-item" data-category="sillas">
+                    <div class="product-card">
                         <div class="product-image">
-                            <img src="public/silla-gamer-secretlab.png" alt="Silla Secretlab" class="product-img">
-                            <div class="product-badge">RECOMENDADO</div>
+                            <img src="public/silla-gamer-secretlab.png" alt="Silla Secretlab"
+                                class="product-img product-clickable-img" data-bs-toggle="modal"
+                                data-bs-target="#productModal" data-product="SG001">
+                            <button class="btn btn-sm btn-info rounded-circle product-detail-btn"
+                                style="display: none;">
+                                <i class="fas fa-info"></i>
+                            </button>
+                            <div class="product-badge">SG001</div>
                         </div>
                         <div class="product-info">
-                            <h5 class="product-title">Silla Gamer Secretlab</h5>
-                            <p class="product-description">Máximo confort con soporte ergonómico.</p>
+                            <h5 class="product-title">Silla Gamer Secretlab Titan</h5>
+                            <p class="product-description">Diseñada para el máximo confort, esta silla ofrece un soporte
+                                ergonómico y personalización ajustable.</p>
                             <div class="product-price">$349.990 CLP</div>
                             <div class="product-rating">
                                 <i class="fas fa-star"></i>
@@ -210,15 +221,18 @@
                 </div>
 
                 <!-- Recommended Product 4 -->
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="product-card recommended">
+                <div class="col-lg-3 col-md-6 mb-4 product-item" data-category="mouse">
+                    <div class="product-card">
                         <div class="product-image">
-                            <img src="public/mouse-logitech-g502.png" alt="Mouse Logitech G502" class="product-img">
-                            <div class="product-badge">RECOMENDADO</div>
+                            <img src="public/mouse-logitech-g502.png" alt="Mouse Logitech G502"
+                                class="product-img product-clickable-img" data-bs-toggle="modal"
+                                data-bs-target="#productModal" data-product="MS001">
+                            <div class="product-badge">MS001</div>
                         </div>
                         <div class="product-info">
-                            <h5 class="product-title">Mouse Logitech G502</h5>
-                            <p class="product-description">Sensor de alta precisión para control exacto.</p>
+                            <h5 class="product-title">Mouse Gamer Logitech G502 HERO</h5>
+                            <p class="product-description">Con sensor de alta precisión y botones personalizables, ideal
+                                para gamers que buscan control preciso.</p>
                             <div class="product-price">$49.990 CLP</div>
                             <div class="product-rating">
                                 <i class="fas fa-star"></i>
@@ -652,8 +666,8 @@
             </div>
         </div>
     </div>
-     <!-- Register Modal -->
-     <div class="modal fade" id="registerModal" tabindex="-1">
+    <!-- Register Modal -->
+    <div class="modal fade" id="registerModal" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -848,125 +862,133 @@
         </div>
     </div>
     <!-- Modal 1 -->
-<div class="modal fade" id="videoModal1" tabindex="-1" aria-labelledby="videoModal1Label" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="videoModal1Label">7 trucos para optimizar tu PC</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <iframe width="100%" height="315" src="https://www.youtube.com/embed/Hg_RGhCqqcM?si=_G78eeiPLFdrNuIa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal 2 -->
-<div class="modal fade" id="videoModal2" tabindex="-1" aria-labelledby="videoModal2Label" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="videoModal2Label">Cómo limpiar tu PC gaming</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-       <iframe width="100%" height="315" src="https://www.youtube.com/embed/BCnQGgctQ_Y?si=cMKrtwrazERCE6z9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
-</div>
-
-    <!--Model de ventana de informacion-->
-    <div class="modal fade" id="productModal" tabindex="-1">
-        <div class="modal-dialog modal-lg">
+    <div class="modal fade" id="videoModal1" tabindex="-1" aria-labelledby="videoModal1Label" aria-hidden="true">
+        <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="productModalTitle">Detalles del Producto</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <h5 class="modal-title" id="videoModal1Label">7 trucos para optimizar tu PC</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <img id="productModalImage" src="/placeholder.svg" alt="" class="img-fluid rounded">
-                        </div>
-                        <div class="col-md-6">
-                            <h4 id="productModalName"></h4>
-                            <p id="productModalDescription" class="text-muted"></p>
-                            <div class="mb-3">
-                                <span class="h4 text-neon-green" id="productModalPrice"></span>
-                            </div>
-                            <div class="mb-3">
-                                <h6>Calificación:</h6>
-                                <div id="productModalRating" class="product-rating mb-2"></div>
-                                <small class="text-muted" id="productModalRatingCount"></small>
-                            </div>
-                            <div class="mb-3">
-                                <span class="badge bg-secondary" id="productModalCode"></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mb-3">
-                        <span class="badge bg-secondary" id="productModalCode"></span>
-                        <button id="favoriteBtn" class="btn btn-outline-warning btn-sm mt-2">
-                            <i class="fas fa-star"></i> Favorito
-                        </button>
-                    </div>
-                    <div class="mt-3">
-                        
-                        <span>Compartir producto:</span>
-                        <div class="d-flex gap-2 mt-1">
-                            <!-- Facebook -->
-                            <a href="#" id="shareFacebook" class="btn btn-primary btn-sm" target="_blank">
-                                <i class="fab fa-facebook-f"></i> Facebook
-                            </a>
-                            <!-- Twitter -->
-                            <a href="#" id="shareTwitter" class="btn btn-info btn-sm" target="_blank">
-                                <i class="fab fa-twitter"></i> Twitter
-                            </a>
-                            <!-- WhatsApp -->
-                            <a href="#" id="shareWhatsApp" class="btn btn-success btn-sm" target="_blank">
-                                <i class="fab fa-whatsapp"></i> WhatsApp
-                            </a>
-                        </div>
-                    </div>
-
-
-                    <!-- Comments Section -->
-                    <div class="mt-4">
-                        <h6>Comentarios de Clientes:</h6>
-                        <div id="productComments" class="comments-section">
-                            <!-- Comments will be loaded here -->
-                        </div>
-                    </div>
-
-                    <!-- Review Form -->
-                    <div class="mt-4">
-                        <h6>Deja tu reseña:</h6>
-                        <form id="reviewForm">
-                            <div class="mb-3">
-                                <label for="reviewRating" class="form-label">Calificación:</label>
-                                <div id="reviewRating" class="star-rating">
-                                    <input type="radio" name="rating" value="5" id="star5"><label for="star5">★</label>
-                                    <input type="radio" name="rating" value="4" id="star4"><label for="star4">★</label>
-                                    <input type="radio" name="rating" value="3" id="star3"><label for="star3">★</label>
-                                    <input type="radio" name="rating" value="2" id="star2"><label for="star2">★</label>
-                                    <input type="radio" name="rating" value="1" id="star1"><label for="star1">★</label>
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="reviewText" class="form-label">Tu comentario:</label>
-                                <textarea class="form-control" id="reviewText" rows="3" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-neon-green">Enviar Reseña</button>
-                        </form>
-                    </div>
-
+                    <iframe width="100%" height="315"
+                        src="https://www.youtube.com/embed/Hg_RGhCqqcM?si=_G78eeiPLFdrNuIa" title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Modal 2 -->
+    <div class="modal fade" id="videoModal2" tabindex="-1" aria-labelledby="videoModal2Label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="videoModal2Label">Cómo limpiar tu PC gaming</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <iframe width="100%" height="315"
+                        src="https://www.youtube.com/embed/BCnQGgctQ_Y?si=cMKrtwrazERCE6z9" title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!--Model de ventana de informacion-->
+        <div class="modal fade" id="productModal" tabindex="-1">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="productModalTitle">Detalles del Producto</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img id="productModalImage" src="/placeholder.svg" alt="" class="img-fluid rounded">
+                            </div>
+                            <div class="col-md-6">
+                                <h4 id="productModalName"></h4>
+                                <p id="productModalDescription" class="text-muted"></p>
+                                <div class="mb-3">
+                                    <span class="h4 text-neon-green" id="productModalPrice"></span>
+                                </div>
+                                <div class="mb-3">
+                                    <h6>Calificación:</h6>
+                                    <div id="productModalRating" class="product-rating mb-2"></div>
+                                    <small class="text-muted" id="productModalRatingCount"></small>
+                                </div>
+                                <div class="mb-3">
+                                    <span class="badge bg-secondary" id="productModalCode"></span>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="mb-3">
+                            <span class="badge bg-secondary" id="productModalCode"></span>
+                            <button id="favoriteBtn" class="btn btn-outline-warning btn-sm mt-2">
+                                <i class="fas fa-star"></i> Favorito
+                            </button>
+                        </div>
+                        <div class="mt-3">
+    
+                            <span>Compartir producto:</span>
+                            <div class="d-flex gap-2 mt-1">
+                                <!-- Facebook -->
+                                <a href="#" id="shareFacebook" class="btn btn-primary btn-sm" target="_blank">
+                                    <i class="fab fa-facebook-f"></i> Facebook
+                                </a>
+                                <!-- Twitter -->
+                                <a href="#" id="shareTwitter" class="btn btn-info btn-sm" target="_blank">
+                                    <i class="fab fa-twitter"></i> Twitter
+                                </a>
+                                <!-- WhatsApp -->
+                                <a href="#" id="shareWhatsApp" class="btn btn-success btn-sm" target="_blank">
+                                    <i class="fab fa-whatsapp"></i> WhatsApp
+                                </a>
+                            </div>
+                        </div>
+    
+    
+                        <!-- Comments Section -->
+                        <div class="mt-4">
+                            <h6>Comentarios de Clientes:</h6>
+                            <div id="productComments" class="comments-section">
+                                <!-- Comments will be loaded here -->
+                            </div>
+                        </div>
+    
+                        <!-- Review Form -->
+                        <div class="mt-4">
+                            <h6>Deja tu reseña:</h6>
+                            <form id="reviewForm">
+                                <div class="mb-3">
+                                    <label for="reviewRating" class="form-label">Calificación:</label>
+                                    <div id="reviewRating" class="star-rating">
+                                        <input type="radio" name="rating" value="5" id="star5"><label for="star5">★</label>
+                                        <input type="radio" name="rating" value="4" id="star4"><label for="star4">★</label>
+                                        <input type="radio" name="rating" value="3" id="star3"><label for="star3">★</label>
+                                        <input type="radio" name="rating" value="2" id="star2"><label for="star2">★</label>
+                                        <input type="radio" name="rating" value="1" id="star1"><label for="star1">★</label>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="reviewText" class="form-label">Tu comentario:</label>
+                                    <textarea class="form-control" id="reviewText" rows="3" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-neon-green">Enviar Reseña</button>
+                            </form>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <link rel="stylesheet" href="styles.css">
 
@@ -975,7 +997,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="script.js"></script>
-
+    <script src="producto.js"></script>
 
 </body>
 

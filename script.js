@@ -391,7 +391,7 @@ if (birthDateValue) {
   birthDate.setHours(0,0,0,0);
   today.setHours(0,0,0,0);
   
-  const minDate = new Date('1960-01-01');
+  const minDate = new Date('1900-01-01');
   minDate.setHours(0,0,0,0);
 
   if (birthDate > today) {
